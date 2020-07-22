@@ -25,12 +25,12 @@ Here is a walkthrouh of the website in case the link to visit the site is down.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_yge5TOVouo" frameborder="0" allowfullscreen></iframe>
 
 ## Tools
-For our website our team decided to use the cloud hosting service on Google Cloud
-Platform, running it on the App Engine. For locally testing we used the web development
-tool Flask. Our sole frontend tool we used is Bootstrap in order to create a simple
-yet attractive design to our website.
+For our website our team decided to use the cloud hosting service on [Google Cloud Platform](https://cloud.google.com/)
+, running it on the App Engine. For locally testing we used the web development tool
+Flask. Our sole frontend tool we used is [Bootstrap](https://getbootstrap.com/) in
+order to create a simple yet attractive design to our website.
 
-<img src="{{ site.url }}{{site.baseurl}}/assets/images/nbanalytics/NBAnalytics_Teams.jpg" alt="NBAnalytics Teams Page">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_Lebron.jpg" alt="NBAnalytics Lebron Page">
 
 Being an analytics website we gathered data from API calls from [balldontlie.io](https://www.balldontlie.io/#introduction)
 and sourced player portrait images from [NBA.com](https://www.nba.com/players). We
@@ -42,9 +42,41 @@ Additionally, we constructed unittests to test any corner cases within possible 
 At the end of the semester we also ran an alternate version of our site on Docker
 as part of an end of year presentation about the tool.
 
+## My Role
+I acted as a full stack developer on this project, having a hand in front-end page
+design, data base management, and back-end testing through unittests.
+
+With front-end work I used Bootstrap to create a simple and slick design from the home
+screen, the navigation bar, and the helping with the design of the teams and players page.
+
+<img src="{{ site.url }}{{site.baseurl}}/assets/images/nbanalytics/NBAnalytics_Teams.jpg" alt="NBAnalytics Teams Page">
+
+Here is how the Teams page is constructed:
+```html
+<div class="container">
+  <div class="row" align="center">
+    {% for team in teams %}
+
+      <div class="col-sm">
+        <div class="card" style="width: 18rem; padding:5px;">
+          <img src="https://stats.nba.com/media/img/teams/logos/{{ team.abbreviation }}_logo.svg" alt="logo" class="card-img-top">
+          <div class="card-body">
+            <a href="/teams/{{team.abbreviation}}" id="team-button" class="btn btn-primary team-link">{{team.teamName}}</a>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+  </div>
+</div>
+```
+
+I also assisted with the database management, loading data from json files into data
+tables to then be displayed on the site. This also lead to me generating most of the
+unittests for the site testing different corner cases of json data to make sure the
+generating wouldn't crash for absurd values.
+
 Here are some more screenshots of the site:
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_Celtics.jpg" alt="NBAnalytics Celtics Page">
-
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_Lebron.jpg" alt="NBAnalytics Lebron Page">
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_About.jpg" alt="NBAnalytics About Page">
