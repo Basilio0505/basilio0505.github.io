@@ -1,7 +1,7 @@
 ---
 title: "NBAnalytics.me"
 date: 2020-05-05
-tags: [Website, Bootstrap, HTML/CSS, Python, MySQL, postgreSQL, Data Science, Databases, API, Google Cloud Platform, Flask]
+tags: [Web Development, Data Science]
 excerpt: "Data analytics custom website. Utilizing Bootstrap, API calls and postgreSQL to construct data tables of different statistics in the NBA."
 ---
 ## Introduction

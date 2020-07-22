@@ -1,7 +1,7 @@
 ---
 title: "Team hermosillobazan (Cross-Dataset Analysis)"
 date: 2019-12-10
-tags: [Python, MySQL, Jupyter Notebook, Data Science, Data Analytics, Databases, Airflow DAG, Google Cloud Platform]
+tags: [Data Science]
 excerpt: "Data analytics custom website. Utilizing Bootstrap, API calls and postgreSQL to construct data tables of different statistics in the NBA."
 ---
 ## Introduction
