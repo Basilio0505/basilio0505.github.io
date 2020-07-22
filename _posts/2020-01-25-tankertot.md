@@ -1,7 +1,7 @@
 ---
 title: "tankerTot"
 date: 2020-01-25
-tags: [Video Game, Phaser 3, Javascript, Software Development, 2020]
+tags: [Video Game, Phaser 3, Javascript, Software Development]
 excerpt: "Using a Javascript code-based game engine, Phaser 3, my team and I created a fun and challenging web game that went on to win a local award."
 ---
 ## Introduction
