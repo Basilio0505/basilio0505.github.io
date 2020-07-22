@@ -56,7 +56,11 @@ Here is how the Teams page is constructed:
 ```html
 <div class="container">
   <div class="row" align="center">
+```
+    ```javascript
     {% for team in teams %}
+    ```
+      ```html
       <div class="col-sm">
         <div class="card" style="width: 18rem; padding:5px;">
           <img src="https://stats.nba.com/media/img/teams/logos/{{ team.abbreviation }}_logo.svg" alt="logo" class="card-img-top">
@@ -65,7 +69,11 @@ Here is how the Teams page is constructed:
           </div>
         </div>
       </div>
+      ```
+    ```javascript
     {% endfor %}
+    ```
+```html
   </div>
 </div>
 ```
