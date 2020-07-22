@@ -46,8 +46,9 @@ as part of an end of year presentation about the tool.
 I acted as a full stack developer on this project, having a hand in front-end page
 design, data base management, and back-end testing through unittests.
 
-With front-end work I used Bootstrap to create a simple and slick design from the home
-screen, the navigation bar, and the helping with the design of the teams and players page.
+With front-end work I used Bootstrap to create a simple and slick design from the
+home screen, the navigation bar, and the helping with the design of the teams and
+players page.
 
 <img src="{{ site.url }}{{site.baseurl}}/assets/images/nbanalytics/NBAnalytics_Teams.jpg" alt="NBAnalytics Teams Page">
 
@@ -75,8 +76,3 @@ I also assisted with the database management, loading data from json files into 
 tables to then be displayed on the site. This also lead to me generating most of the
 unittests for the site testing different corner cases of json data to make sure the
 generating wouldn't crash for absurd values.
-
-Here are some more screenshots of the site:
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_Celtics.jpg" alt="NBAnalytics Celtics Page">
-
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/nbanalytics/NBAnalytics_About.jpg" alt="NBAnalytics About Page">
