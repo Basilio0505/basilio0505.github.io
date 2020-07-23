@@ -17,4 +17,15 @@ of the U.S Government's Federal Emergency Management Agency, found [here](https:
 storm events and wildfires compare when considering the time of year, location, and
 damage caused.
 
+The github repository could be found at: [github](https://github.com/Basilio0505/hermosillobazan-CrossDatasetProject)
+
 ## Tools
+To start off our project my partner and I utilized public dataset website, [Enigma.com](https://enigma.com/).
+After retrieving our data we utilized Google Cloud Platform tools to clean, organize,
+combine, and analyze our chosen datasets.
+
+Using Google Cloud Storage we stored our datasets and future data tables, using BigQuery
+we broke up and organized with MySQL. Finally with the Google Could Dataflow tool
+we constructed multiple new data tables with Jupyter Notebooks and with the AI Platform
+we sped up the creation of new tables out of the thousands of records we had in our two 
+datasets.
