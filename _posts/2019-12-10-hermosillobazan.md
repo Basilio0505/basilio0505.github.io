@@ -30,6 +30,8 @@ we constructed multiple new data tables with Jupyter Notebooks and with the AI P
 we sped up the creation of new tables out of the thousands of records we had in our two
 datasets.
 
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/hermosillobazan/AirflowDAG.jpg" alt="AirflowDAG">
+
 Here is an example of the tables constructed:
 ```sql
 -- Creates a table of events and where and when they happened as well as interesting facts such as damage in crops, deaths and injuries they caused.
@@ -117,3 +119,52 @@ WHERE state_fips IS NOT null OR state IS NOT null)
 ORDER BY state_fips           
                  
 ```
+## Obstacles
+With this project specifically designed to untilize two seperate datasets curated by seperate organizations,
+their were surely obstacles in our path that presented itself. To formulate a core objective and questions 
+to answer between the datasets we had to keep in mind there would be missing data entires, values that would
+not match up between datasets and size differences.
+
+For example, the Wild Land Incidents dataset merely provided dates and not seperated values for month, day, 
+nad year as the Storm Events Dataset did. As well as, the Wild Land Incidents dataset only state abbreviations
+rather than full state names. 
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/hermosillobazan/BeamPipelines.jpg" alt="Beam">
+
+We were able to utilize Apache Beam to format the data to allow us to create primary keys in which we can use 
+to compare data.For example below is the formatting we used to alter the data records state value:
+```python
+# DoFn to perform on each element in the input PCollection.
+class ExpandStateFn(beam.DoFn):
+    def process(self, element):
+        state_id, notneeded = element 
+        
+        if state_id == "AL":
+            statename = "ALABAMA"
+            state_fips = 1
+        elif state_id == "AK":
+            statename = "ALASKA"
+            state_fips = 2
+		#ALL OTHER US STATES
+		else:
+            statename = "OTHER"
+            state_fips = 0
+
+        return [(state_id, statename, state_fips)]  
+
+# PTransform: format for BQ sink
+class MakeRecordFn(beam.DoFn):
+    def process(self, element):
+        state_id, statename, state_fips = element
+        record = {'state_id':state_id, 
+               'statename':statename, 
+               'state_fips':state_fips}
+        return [record] 
+```
+
+## Results
+With our best efforts to wokr through the obstabcles presented in front of us we were able to answer the quesions
+we presented at the start of the project. Although, surely there is plenty of outliers and missing data that had
+affected our results. We did see some correlations between the two datasets.
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/hermosillobazan/Graphs.jpg" alt="Graphs">
