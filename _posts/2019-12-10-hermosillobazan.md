@@ -144,8 +144,7 @@ class ExpandStateFn(beam.DoFn):
             state_fips = 1
         elif state_id == "AK":
             statename = "ALASKA"
-            state_fips = 2
-		#ALL OTHER US STATES
+            state_fips = 2 #ALL OTHER US STATES
 		else:
             statename = "OTHER"
             state_fips = 0
